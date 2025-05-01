@@ -2,6 +2,7 @@ import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
 import TodoSummary from "./components/TodoSummary";
 import useTodos from "./hooks/useTodos";
+import DefaultGallery from "./components/ImageGallery";
 
 function App() {
   const {
@@ -24,6 +25,9 @@ function App() {
         />
       </div>
       <TodoSummary todos={todos} deleteAllCompleted={deleteAllCompletedTodos} />
+      <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
+        <DefaultGallery/>
+      </div>
     </main>
   );
 }
