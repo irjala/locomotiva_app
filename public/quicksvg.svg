@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2.0810776mm"
+   height="2.2567062mm"
+   viewBox="0 0 2.0810776 2.2567062"
+   version="1.1"
+   id="svg5"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-22.792859,-48.354441)">
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle;white-space:pre;inline-size:13.6684;opacity:0.3;fill:#ff0000;stroke-width:0.264583"
+       x="23.424538"
+       y="50.608566"
+       id="text113"
+       inkscape:export-filename="quicksvg.svg"
+       inkscape:export-xdpi="333.68634"
+       inkscape:export-ydpi="333.68634"><tspan
+         x="23.424538"
+         y="50.608566"
+         id="tspan701"><tspan
+           style="font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Italic';fill:#800000"
+           id="tspan699">L</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Italic';text-align:center;text-anchor:middle;opacity:0.3;fill:#800000;stroke-width:0.264583"
+       x="24.078638"
+       y="50.611149"
+       id="text371"><tspan
+         sodipodi:role="line"
+         id="tspan369"
+         style="fill:#333333;stroke-width:0.264583"
+         x="24.078638"
+         y="50.611149">T</tspan></text>
+  </g>
+</svg>
