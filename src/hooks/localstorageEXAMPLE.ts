@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { dummyData } from "../data/todos";
+import { dummyData } from "../data/placeholder";
 import { Todo } from "../types/todo";
 
 export default function useTodos() {
