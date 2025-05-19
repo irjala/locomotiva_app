@@ -6,13 +6,15 @@ interface HeaderProps {
   onNavigate: (section: string) => void;
 }
 
+const ARRIVAL_AUTH_KEY = import.meta.env.VITE_ARRIVAL_AUTH_KEY as string;
+
 export default function Header({ onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasArrivalAuth, setHasArrivalAuth] = useState(false);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const urlAuth = urlParams.get("auth") === "123iwanttoseearrival456";
+    const urlAuth = urlParams.get("auth") === ARRIVAL_AUTH_KEY;
     if (urlAuth) {
       setArrivalAuthForToday();
       setHasArrivalAuth(true);
