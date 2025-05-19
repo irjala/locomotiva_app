@@ -1,5 +1,6 @@
-import { useState } from "react";
-import logo1 from "../assets/logo01.svg";
+import { useState, useEffect } from "react";
+import logo1 from "../assets/logo02.svg";
+import { setArrivalAuthForToday, hasValidArrivalAuth } from "../utils/arrivalAuth";
 
 interface HeaderProps {
   onNavigate: (section: string) => void;
@@ -7,14 +8,27 @@ interface HeaderProps {
 
 export default function Header({ onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasArrivalAuth, setHasArrivalAuth] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlAuth = urlParams.get("auth") === "123iwanttoseearrival456";
+    if (urlAuth) {
+      setArrivalAuthForToday();
+      setHasArrivalAuth(true);
+      onNavigate("Arrival"); // Automatically navigate to Arrival
+    } else if (hasValidArrivalAuth()) {
+      setHasArrivalAuth(true);
+    }
+  }, [onNavigate]);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
   const handleMenuItemClick = (section: string) => {
-    onNavigate(section); // Navigate to the selected section
-    setIsMenuOpen(false); // Close the menu
+    onNavigate(section);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -51,14 +65,16 @@ export default function Header({ onNavigate }: HeaderProps) {
                 Gallery
               </button>
             </li>
-            <li>
-              <button
-                className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
-                onClick={() => handleMenuItemClick("Arrival")}
-              >
-                Arrival
-              </button>
-            </li>
+            {hasArrivalAuth && (
+              <li>
+                <button
+                  className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
+                  onClick={() => handleMenuItemClick("Arrival")}
+                >
+                  Arrival
+                </button>
+              </li>
+            )}
             <li>
               <button
                 className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
