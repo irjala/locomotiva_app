@@ -9,7 +9,6 @@ interface HeaderProps {
 const ARRIVAL_AUTH_KEY = import.meta.env.VITE_ARRIVAL_AUTH_KEY as string;
 
 export default function Header({ onNavigate }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasArrivalAuth, setHasArrivalAuth] = useState(false);
 
   useEffect(() => {
@@ -24,13 +23,8 @@ export default function Header({ onNavigate }: HeaderProps) {
     }
   }, [onNavigate]);
 
-  const handleToggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
   const handleMenuItemClick = (section: string) => {
     onNavigate(section);
-    setIsMenuOpen(false);
   };
 
   return (
@@ -44,16 +38,13 @@ export default function Header({ onNavigate }: HeaderProps) {
           />
         </a>
 
-        <div
-          id="collapseMenu"
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50 lg:block`}
-        >
-          <ul className="lg:flex gap-x-4 max-lg:space-y-3">
+        {/* Desktop navigation */}
+        <nav className="hidden lg:block w-full">
+          <ul className="flex gap-x-4 justify-center">
             <li>
               <button
-                className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
+                style={{ color: "#9b6a02" }}
+                className="hover:text-blue-700 block font-semibold text-[15px]"
                 onClick={() => handleMenuItemClick("Welcome")}
               >
                 Welcome
@@ -61,7 +52,8 @@ export default function Header({ onNavigate }: HeaderProps) {
             </li>
             <li>
               <button
-                className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
+                style={{ color: "#9b6a02" }}
+                className="hover:text-blue-700 block font-semibold text-[15px]"
                 onClick={() => handleMenuItemClick("Gallery")}
               >
                 Gallery
@@ -70,7 +62,8 @@ export default function Header({ onNavigate }: HeaderProps) {
             {hasArrivalAuth && (
               <li>
                 <button
-                  className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
+                  style={{ color: "#9b6a02" }}
+                  className="hover:text-blue-700 block font-semibold text-[15px]"
                   onClick={() => handleMenuItemClick("Arrival")}
                 >
                   Arrival
@@ -79,21 +72,59 @@ export default function Header({ onNavigate }: HeaderProps) {
             )}
             <li>
               <button
-                className="hover:text-blue-700 text-blue-700 block font-medium text-[15px]"
+                style={{ color: "#9b6a02" }}
+                className="hover:text-blue-700 block font-semibold text-[15px]"
                 onClick={() => handleMenuItemClick("Information")}
               >
                 Information
               </button>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <button
-          className="lg:hidden px-4 py-2 text-sm rounded-full font-medium cursor-pointer tracking-wide text-slate-900 border border-gray-400 bg-transparent hover:bg-gray-50 transition-all"
-          onClick={handleToggleMenu}
-        >
-          Menu
-        </button>
+        {/* Mobile navigation: always visible, row, 80% opacity, centered */}
+        <nav className="block lg:hidden w-full">
+          <ul className="flex gap-x-2 justify-center items-center bg-white bg-opacity-80 rounded-lg py-2">
+            <li className="flex-1 min-w-0">
+              <button
+                style={{ color: "#9b6a02", height: "150%" }}
+                className="hover:text-blue-700 block font-semibold text-base w-full h-[150%] truncate"
+                onClick={() => handleMenuItemClick("Welcome")}
+              >
+                Welcome
+              </button>
+            </li>
+            <li className="flex-1 min-w-0">
+              <button
+                style={{ color: "#9b6a02", height: "150%" }}
+                className="hover:text-blue-700 block font-semibold text-base w-full h-[150%] truncate"
+                onClick={() => handleMenuItemClick("Gallery")}
+              >
+                Gallery
+              </button>
+            </li>
+            {hasArrivalAuth && (
+              <li className="flex-1 min-w-0">
+                <button
+                  style={{ color: "#9b6a02", height: "150%" }}
+                  className="hover:text-blue-700 block font-semibold text-base w-full h-[150%] truncate"
+                  onClick={() => handleMenuItemClick("Arrival")}
+                >
+                  Arrival
+                </button>
+              </li>
+            )}
+            <li className="flex-1 min-w-0">
+              <button
+                style={{ color: "#9b6a02", height: "150%" }}
+                className="hover:text-blue-700 block font-semibold text-base w-full h-[150%] truncate"
+                onClick={() => handleMenuItemClick("Information")}
+              >
+                Information
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

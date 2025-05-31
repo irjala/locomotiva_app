@@ -34,25 +34,25 @@ export default function Arrival() {
             <div className="flex flex-col gap-6 items-center"><h2 className="text-4xl font-semibold text-gray-700 mt-4 text-center">
               Calling the elevator with the keyfob</h2>
               <YouTubeIframe
-                src="https://youtube.com/shorts/r_UZr56cXGg?feature=share"
+                src="https://www.youtube.com/embed/r_UZr56cXGg"
                 title="Elevator, outside"
               />
               <h2 className="text-4xl font-semibold text-gray-700 mt-4 text-center">
               Activating the elevator and pressing the correct floor</h2>
               <YouTubeIframe
-                src="https://youtube.com/shorts/gLKQBK6CB1I?feature=share"
+                src="https://www.youtube.com/embed/gLKQBK6CB1I"
                 title="Elevator, inside"
               />
               <h2 className="text-4xl font-semibold text-gray-700 mt-4 text-center">
               Walking from the elevator to the appartment door.</h2>
               <YouTubeIframe
-                src="https://youtube.com/shorts/JKCuFlbKVvg?feature=share"
+                src="https://www.youtube.com/embed/JKCuFlbKVvg"
                 title="Walk from elevator to the apartment"
               />
               <h2 className="text-4xl font-semibold text-gray-700 mt-4 text-center">
               How to use the digital door lock</h2>
               <YouTubeIframe
-                src="https://youtube.com/shorts/5VheHNrw1dw?feature=share"
+                src="https://www.youtube.com/embed/5VheHNrw1dw"
                 title="Using the digital door lock"
               />
             </div>
