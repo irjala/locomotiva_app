@@ -4,6 +4,7 @@
 ### The simple idea is to hide the arrival guide from everyone except those with the correct link including a authorization header.
 ## Future improvements:
 ***
+* Module text content seperated into own editable files.
 * Seperate module for generating and updating a new serverside auth key with automatic link generation.
 * Real gallery without performance issues, lower resolution preview images.
 * Refined landing page
